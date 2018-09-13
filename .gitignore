@@ -331,3 +331,5 @@ ASALocalRun/
 
 .vs/angular2demo/v15/Server/sqlite3/db.lock
 .vs/angular2demo/v15/Server/sqlite3/storage.ide-shm
+*Server/sqlite3/storage.ide-shm
+*Server/sqlite3/storage.ide-shm
