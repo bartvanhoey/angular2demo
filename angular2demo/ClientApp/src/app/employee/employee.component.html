@@ -1,27 +1,12 @@
 <div>
-  <h1>{{pageHeader ? pageHeader : 'No Header' }}</h1>
-  <h1>{{getFullName() }}</h1>
-  <img src="{{imagePath}}">
-  <br>
-  <img src="http://www.pragimtech.com/{{imagePath}}">
-  <app-employee-detail></app-employee-detail>
   <br>
   <br>
-  <button class="colorClass" [class]="classesToApply" [disabled]="isDisabled">Click Me</button>
+  <button style="color: red;" [style.font-weight]="isBold ? 'bold': 'normal'" >Click Me</button>
   <br>
   <br>
-  <br>
-  <button class="colorClass" [class.boldClass]="!applyBoldClass" [disabled]="isDisabled">Click Me</button>
-  <br>
-  <br>
-  <button class="colorClass italicsClass boldClass" [class.boldClass]="applyBoldClass"  [disabled]="isDisabled">Click Me</button>
+  <button style="color: red;" [style.font-size.px]="fontSize" >Click Me</button>
   <br>
   <br>
-  <button class="colorClass" [ngClass]="addClasses()"  [disabled]="isDisabled">Click Me</button>
-  <br>
-  <br>
-  <span [innerHtml]="pageHeader"></span>
-  <br>
-  <input type="text" id="inputId" value="Tom">
+  <button style="color: red;" [ngStyle]="addStyle()" >Click Me</button>
 
 </div>

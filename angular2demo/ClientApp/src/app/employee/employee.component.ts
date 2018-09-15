@@ -5,24 +5,17 @@ import {Component} from "@angular/core";
   templateUrl: "./employee.component.html"
 })
 export class EmployeeComponent {
-  pageHeader: string = "Employee Details";
-  imagePath = "Images/Logo.JPG";
-  firstName: string = "Tom";
-  lastName: string = "Hopkings";
-  isDisabled: boolean = false;
+  isBold: boolean = true;
+  fontSize: number = 20;
+  isItalic: boolean = true;
 
-  classesToApply: string = "italicsClass boldClass";
-  applyBoldClass: boolean = true;
-  applyItalicsClass: boolean = false;
-
-  getFullName(): string {
-    return this.firstName + " " + this.lastName
-  }
-
-  addClasses(){
+  addStyle(){
     return {
-      boldClass: this.applyBoldClass,
-      italicsClass: this.applyItalicsClass
-    };
+      'font-size.px': this.fontSize,
+      'font-style': this.isItalic ? 'italic': 'normal',
+      'font-weight': this.isBold? 'bold': 'normal',
+    }
   }
+
+
 }
