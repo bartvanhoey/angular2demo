@@ -5,7 +5,20 @@
   <br>
   <img src="http://www.pragimtech.com/{{imagePath}}">
   <app-employee-detail></app-employee-detail>
-  <button [disabled]="isDisabled">Click Me</button>
+  <br>
+  <br>
+  <button class="colorClass" [class]="classesToApply" [disabled]="isDisabled">Click Me</button>
+  <br>
+  <br>
+  <br>
+  <button class="colorClass" [class.boldClass]="!applyBoldClass" [disabled]="isDisabled">Click Me</button>
+  <br>
+  <br>
+  <button class="colorClass italicsClass boldClass" [class.boldClass]="applyBoldClass"  [disabled]="isDisabled">Click Me</button>
+  <br>
+  <br>
+  <button class="colorClass" [ngClass]="addClasses()"  [disabled]="isDisabled">Click Me</button>
+  <br>
   <br>
   <span [innerHtml]="pageHeader"></span>
   <br>

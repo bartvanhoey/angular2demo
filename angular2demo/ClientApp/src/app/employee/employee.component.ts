@@ -11,7 +11,18 @@ export class EmployeeComponent {
   lastName: string = "Hopkings";
   isDisabled: boolean = false;
 
+  classesToApply: string = "italicsClass boldClass";
+  applyBoldClass: boolean = true;
+  applyItalicsClass: boolean = false;
+
   getFullName(): string {
     return this.firstName + " " + this.lastName
+  }
+
+  addClasses(){
+    return {
+      boldClass: this.applyBoldClass,
+      italicsClass: this.applyItalicsClass
+    };
   }
 }
