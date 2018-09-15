@@ -10,6 +10,8 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { EmployeeComponent } from './employee/employee.component'
 import { EmployeeDetailComponent} from "./employee/employee-detail.component";
+import {EmployeeListComponent } from "./employee/employee-list.component"
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { EmployeeDetailComponent} from "./employee/employee-detail.component";
     CounterComponent,
     FetchDataComponent,
     EmployeeComponent,
-    EmployeeDetailComponent
+    EmployeeDetailComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
