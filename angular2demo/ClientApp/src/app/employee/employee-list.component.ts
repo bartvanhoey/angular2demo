@@ -8,16 +8,23 @@ import {Component} from "@angular/core";
 export class EmployeeListComponent {
   employees: any[];
 
-  getTotalEmployeesCount():number{
+  selectedEmployeeCountRadioButton: string = "All";
+
+  onEmployeeCountRadioButtonChange(selectedRadioButtonValue: string): void {
+    this.selectedEmployeeCountRadioButton = selectedRadioButtonValue;
+  }
+
+
+  getTotalEmployeesCount(): number {
     return this.employees.length;
   }
 
-  getTotalMaleEmployeesCount():number{
-    return this.employees.filter(x => x.gender.toLowerCase() === 'male').length;
+  getTotalMaleEmployeesCount(): number {
+    return this.employees.filter(x => x.gender === 'Male').length;
   }
 
-  getTotalFemaleEmployeesCount():number{
-    return this.employees.filter(x => x.gender.toLowerCase() === 'female').length;
+  getTotalFemaleEmployeesCount(): number {
+    return this.employees.filter(x => x.gender === 'Female').length;
   }
 
   constructor() {
@@ -48,7 +55,6 @@ export class EmployeeListComponent {
       }
     ];
   }
-
 
 
 }
