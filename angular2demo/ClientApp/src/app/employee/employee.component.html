@@ -1,8 +1,17 @@
 <div>
-
-
   <br>
   <br>
-  <app-employee-detail></app-employee-detail>
-
+  <label>First Name:
+    <input [value]="firstName" (input)="firstName=$event.target.value">
+  </label>
+  <br>
+  you entered: {{firstName}}
+  <br>
+  <br>
+  <!--do not forget to include import { FormsModule } from '@angular/forms'; in app.module.ts-->
+  <label>Last Name:
+    <input [(ngModel)]="lastName">
+  </label>
+  <br>
+  you entered: {{lastName}}
 </div>

@@ -5,8 +5,6 @@ import {Component} from "@angular/core";
   templateUrl: "./employee.component.html"
 })
 export class EmployeeComponent {
-  onClick(): void{
-    console.log("button click");
-  }
-
+  firstName: string = "Tom";
+  lastName: string = "Tom";
 }
