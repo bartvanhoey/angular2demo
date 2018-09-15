@@ -8,6 +8,18 @@ import {Component} from "@angular/core";
 export class EmployeeListComponent {
   employees: any[];
 
+  getTotalEmployeesCount():number{
+    return this.employees.length;
+  }
+
+  getTotalMaleEmployeesCount():number{
+    return this.employees.filter(x => x.gender.toLowerCase() === 'male').length;
+  }
+
+  getTotalFemaleEmployeesCount():number{
+    return this.employees.filter(x => x.gender.toLowerCase() === 'female').length;
+  }
+
   constructor() {
     this.employees = [
       {
@@ -30,6 +42,10 @@ export class EmployeeListComponent {
         code: 'emp105', name: 'Nancy', gender: 'Female',
         annualSalary: 6700.826, dateOfBirth: '12/15/1982'
       },
+      {
+        code: 'emp106', name: 'Steve', gender: 'Male',
+        annualSalary: 7700.481, dateOfBirth: '11/18/1979'
+      }
     ];
   }
 
