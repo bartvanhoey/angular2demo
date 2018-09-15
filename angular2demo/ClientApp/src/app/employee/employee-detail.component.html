@@ -1,6 +1,14 @@
 
 
 <table>
+  <thead>
+  <tr>
+    <th [attr.colspan]="columnSpan">
+      Employee Details
+    </th>
+  </tr>
+  </thead>
+  <tbody>
   <tr>
     <td>First Name</td>
     <td>{{firstName}}</td>
@@ -17,4 +25,6 @@
     <td>Age</td>
     <td>{{age}}</td>
   </tr>
+  </tbody>
+
 </table>

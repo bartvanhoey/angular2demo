@@ -1,4 +1,14 @@
 <div>
-  <h1>{{pageHeader}}</h1>
+  <h1>{{pageHeader ? pageHeader : 'No Header' }}</h1>
+  <h1>{{getFullName() }}</h1>
+  <img src="{{imagePath}}">
+  <br>
+  <img src="http://www.pragimtech.com/{{imagePath}}">
   <app-employee-detail></app-employee-detail>
+  <button [disabled]="isDisabled">Click Me</button>
+  <br>
+  <span [innerHtml]="pageHeader"></span>
+  <br>
+  <input type="text" id="inputId" value="Tom">
+
 </div>

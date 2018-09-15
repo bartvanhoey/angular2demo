@@ -7,6 +7,7 @@ import {Component} from "@angular/core";
 
 })
 export class EmployeeDetailComponent {
+  columnSpan = 2;
   firstName: string = "Tom";
   lastName: string = "Hopkins";
   age: number = 20;
