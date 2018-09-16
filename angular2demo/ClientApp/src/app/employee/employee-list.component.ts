@@ -1,4 +1,7 @@
 import {Component} from "@angular/core";
+import {Employee} from "./IEmployee";
+
+
 
 @Component({
   selector: 'app-employee-list',
@@ -6,7 +9,7 @@ import {Component} from "@angular/core";
   styleUrls: ['/employee-list.component.css']
 })
 export class EmployeeListComponent {
-  employees: any[];
+  employees: Employee[];
 
   selectedEmployeeCountRadioButton: string = "All";
 
