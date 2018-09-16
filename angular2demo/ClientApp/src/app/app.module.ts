@@ -13,6 +13,7 @@ import {EmployeeDetailComponent} from "./employee/employee-detail.component";
 import {EmployeeListComponent} from "./employee/employee-list.component"
 import {EmployeeTitlePipe} from "./employee/employee-title.pipe";
 import {EmployeeCountComponent} from './employee/employee-count.component';
+import {SimpleComponent} from "./others/simple.component";
 
 
 
@@ -28,7 +29,8 @@ import {EmployeeCountComponent} from './employee/employee-count.component';
     EmployeeDetailComponent,
     EmployeeListComponent,
     EmployeeTitlePipe,
-    EmployeeCountComponent
+    EmployeeCountComponent,
+    SimpleComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
