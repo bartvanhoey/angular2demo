@@ -15,9 +15,6 @@ import {EmployeeTitlePipe} from "./employee/employee-title.pipe";
 import {EmployeeCountComponent} from './employee/employee-count.component';
 import {SimpleComponent} from "./others/simple.component";
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
