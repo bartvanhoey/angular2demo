@@ -12,6 +12,7 @@ import {EmployeeService} from "./employee.service";
 export class EmployeeListComponent implements OnInit {
   employees: IEmployee[];
   selectedEmployeeCountRadioButton: string = "All";
+  statusMessage: string = "Loading data. Please wait...";
 
   constructor(private employeeService: EmployeeService) {
 
@@ -36,9 +37,8 @@ export class EmployeeListComponent implements OnInit {
 
   ngOnInit(): void {
     this.employeeService.getEmployees().subscribe(
-      response => {
-        this.employees = response as IEmployee[];
-      }
+      response => this.employees = response as IEmployee[],
+         () => {this.statusMessage = 'Problem with the service. Try again later!'}
     );
   }
 }
