@@ -1,4 +1,4 @@
-<app-employee-count [all]="getTotalEmployeesCount()"
+<app-employee-count *ngIf="employees" [all]="getTotalEmployeesCount()"
                     [male]="getTotalMaleEmployeesCount()"
                     [female]="getTotalFemaleEmployeesCount()"
                     (countRadioButtonChanged)="onEmployeeCountRadioButtonChange($event)"
@@ -24,11 +24,14 @@
       <td>{{employee.code | uppercase}}</td>
       <td>{{employee.name | employeeTitle:employee.gender }}</td>
       <td>{{employee.gender}}</td>
-      <td>{{employee.annualSalary | currency: 'USD':true:'1.3-3'}}</td>
+      <td>{{employee.annualSalary | currency: 'USD':'symbol':'1.3-3'}}</td>
       <td>{{employee.dateOfBirth | date: 'dd/MM/y' | uppercase }}</td>
     </tr>
   </ng-container>
-  <tr *ngIf="!employees || !employees.length">
+  <tr *ngIf="!employees">
+    <td colspan="5">Loading data. Please wait...</td>
+  </tr>
+  <tr  *ngIf="employees && !employees.length">
     <td colspan="5">No employees to display</td>
   </tr>
   </tbody>

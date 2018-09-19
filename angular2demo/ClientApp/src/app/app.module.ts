@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import {AppComponent} from './app.component';
 import {NavMenuComponent} from './nav-menu/nav-menu.component';
@@ -14,6 +14,7 @@ import {EmployeeListComponent} from "./employee/employee-list.component"
 import {EmployeeTitlePipe} from "./employee/employee-title.pipe";
 import {EmployeeCountComponent} from './employee/employee-count.component';
 import {SimpleComponent} from "./others/simple.component";
+import {EnsureAcceptHeaderInterceptor} from "../ensure-accept-header-interceptor";
 
 @NgModule({
   declarations: [
@@ -40,7 +41,11 @@ import {SimpleComponent} from "./others/simple.component";
       {path: 'employee', component: EmployeeComponent},
     ])
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: EnsureAcceptHeaderInterceptor,
+      multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

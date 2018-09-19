@@ -9,7 +9,7 @@ import {EmployeeService} from "./employee.service";
   styleUrls: ['/employee-list.component.css'],
   providers: [EmployeeService]
 })
-export class EmployeeListComponent implements OnInit{
+export class EmployeeListComponent implements OnInit {
   employees: IEmployee[];
   selectedEmployeeCountRadioButton: string = "All";
 
@@ -35,10 +35,10 @@ export class EmployeeListComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.employees = this.employeeService.getEmployees();
+    this.employeeService.getEmployees().subscribe(
+      response => {
+        this.employees = response as IEmployee[];
+      }
+    );
   }
-
-  //DESKTOP-HHLDTE1\SQLSERVER2017STA
-
-
 }
