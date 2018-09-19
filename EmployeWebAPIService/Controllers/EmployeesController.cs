@@ -26,7 +26,8 @@ namespace EmployeWebAPIService.Controllers
         [HttpGet("{code}")]
         public  IActionResult GetEmployee(string code)
         {
-            return Ok(_employeeContext.Employees.Where(x => x.Code == code).ToList());
+            var employee = _employeeContext.Employees.SingleOrDefault(x => x.Code == code);
+            return Ok(employee);
         }
         
     }

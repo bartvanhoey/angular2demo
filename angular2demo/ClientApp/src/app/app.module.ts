@@ -16,12 +16,14 @@ import {EmployeeCountComponent} from './employee/employee-count.component';
 import {SimpleComponent} from "./others/simple.component";
 import {EnsureAcceptHeaderInterceptor} from "../ensure-accept-header-interceptor";
 import {PageNotFoundComponent} from "./others/page-not-found.component";
+import {EmployeeService} from "./employee/employee.service";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
   {path: 'counter', component: CounterComponent},
   {path: 'fetch-data', component: FetchDataComponent},
-  {path: 'employee', component: EmployeeComponent},
+  {path: 'employees', component: EmployeeComponent},
+  {path: 'employees/:code', component: EmployeeDetailComponent},
   {path: '**', component: PageNotFoundComponent},
 ];
 
@@ -47,6 +49,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
+    EmployeeService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: EnsureAcceptHeaderInterceptor,

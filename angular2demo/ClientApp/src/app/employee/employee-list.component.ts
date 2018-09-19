@@ -7,8 +7,8 @@ import {EmployeeService} from "./employee.service";
   selector: 'app-employee-list',
   templateUrl: '/employee-list.component.html',
   styleUrls: ['/employee-list.component.css'],
-  providers: [EmployeeService]
 })
+
 export class EmployeeListComponent implements OnInit {
   employees: IEmployee[];
   selectedEmployeeCountRadioButton: string = "All";
