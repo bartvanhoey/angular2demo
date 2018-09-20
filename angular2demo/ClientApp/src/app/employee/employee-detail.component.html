@@ -29,3 +29,6 @@
 <div *ngIf="!employee">
   {{statusMessage}}
 </div>
+
+Colour preference:
+<input type="text" [(ngModel)]="colour" [style.background]="colour"/>

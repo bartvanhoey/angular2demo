@@ -17,6 +17,7 @@ import {SimpleComponent} from "./others/simple.component";
 import {EnsureAcceptHeaderInterceptor} from "../ensure-accept-header-interceptor";
 import {PageNotFoundComponent} from "./others/page-not-found.component";
 import {EmployeeService} from "./employee/employee.service";
+import {UserPreferencesService} from "./employee/user-preferences.service";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
@@ -50,6 +51,7 @@ const appRoutes: Routes = [
   ],
   providers: [
     EmployeeService,
+    UserPreferencesService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: EnsureAcceptHeaderInterceptor,
