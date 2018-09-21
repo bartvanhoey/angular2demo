@@ -26,7 +26,7 @@ export class EmployeeDetailComponent implements OnInit {
             this.statusMessage = "Employee with the specified Employee Code does not exist";
           } else {
             this.employee = employeeData;
-            console.log(this.employee);
+            //console.log(this.employee);
           }
         },
         error => {

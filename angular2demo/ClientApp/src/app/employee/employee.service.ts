@@ -27,7 +27,7 @@ export class EmployeeService {
         map(heroes => heroes[0]),
         tap(h => {
           const outCome = h ? 'fetched': 'did not find';
-          console.log({outCome});
+          //console.log({outCome});
 
         }),
         catchError(this.handleError('getEmployee', null))
