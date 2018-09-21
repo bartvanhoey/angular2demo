@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {EmployeeService} from "./employee.service";
 import {IEmployee} from "./employee";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {UserPreferencesService} from "./user-preferences.service";
 
 @Component({
@@ -12,9 +12,12 @@ import {UserPreferencesService} from "./user-preferences.service";
 
 export class EmployeeDetailComponent implements OnInit {
   employee: IEmployee;
-  statusMessage= "Loading data. Please wait...";
+  statusMessage = "Loading data. Please wait...";
 
-  constructor(private userPreferencesService: UserPreferencesService, private employeeService: EmployeeService, private activatedRoute: ActivatedRoute) {
+  constructor(private router: Router,
+              private userPreferencesService: UserPreferencesService,
+              private employeeService: EmployeeService,
+              private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -35,7 +38,6 @@ export class EmployeeDetailComponent implements OnInit {
         });
 
 
-
   }
 
   get colour(): string {
@@ -44,5 +46,9 @@ export class EmployeeDetailComponent implements OnInit {
 
   set colour(colour: string) {
     this.userPreferencesService.colourPreference = colour;
+  }
+
+  onBackButtonClick(): void{
+    this.router.navigate(['/employees']);
   }
 }

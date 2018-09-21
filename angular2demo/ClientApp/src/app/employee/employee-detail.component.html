@@ -30,5 +30,8 @@
   {{statusMessage}}
 </div>
 
-Colour preference:
-<input type="text" [(ngModel)]="colour" [style.background]="colour"/>
+<!--Colour preference:-->
+<!--<input type="text" [(ngModel)]="colour" [style.background]="colour"/>-->
+<div style="margin-top: 5px">
+  <input (click)="onBackButtonClick()" type="button" class="btn btn-primary" value="Back to Employees List" />
+</div>
